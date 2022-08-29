@@ -60,7 +60,8 @@ class dataInfo:
         '''
         if self.df[self.df.duplicated()].count == 0:
             print(f"There are {self.df[self.df.duplicated()].count} duplicated values")
-        return self.df[self.df.duplicated()]
+        else:
+            return self.df[self.df.duplicated()]
 
     def find_column_missing_percentage(self):
         '''
