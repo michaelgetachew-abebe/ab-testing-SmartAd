@@ -3,6 +3,7 @@ __pycache__/
 *.py[cod]
 *$py.class
 data/AdSmartABdata.csv
+scripts/.ipynb_checkpoints
 # C extensions
 *.so
 
