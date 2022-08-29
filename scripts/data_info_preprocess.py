@@ -17,27 +17,17 @@ class dataInfo:
             Returns the info of the dataframe read into it!!!
         '''
         return self.df.info()
+    def get_shape(self):
+        '''
+            Returns the shape of a given dataframe...
+        '''
+        return self.shape
 
     def find_matrix_correlation(self):
         '''
             Returns the correlation matrix of the passed Dataframe
         '''
         return self.df.corr()
-
-    def find_memory_usage(self):
-        '''
-            Returns the memory usage of the passed DAtaframe
-        '''
-        print(f"Current DataFrame Memory Usage of columns is :")
-        return self.df.memory_usage()
-
-    def find_total_memory_usage(self):
-        '''
-            Returns the total memory usage of the passed Dataframe
-        '''
-        value = self.df.memory_usage(deep=True).sum()
-        print(f"Current DataFrame Memory Usage:\n{value}")
-        return value
 
     def find_aggregate(self, stat_list: list):
         '''
@@ -63,7 +53,7 @@ class dataInfo:
         else:
             return self.df[self.df.duplicated()]
 
-    def find_column_missing_percentage(self):
+    def find_column_missing_percentage(self, df):
         '''
             Returns the missing percentage of the passed Dataframe
         '''
