@@ -12,6 +12,12 @@ class dataInfo:
         """
         self.df = df
 
+    def get_info(self):
+        '''
+            Returns the info of the dataframe read into it!!!
+        '''
+        return self.df.info()
+
     def find_matrix_correlation(self):
         '''
             Returns the correlation matrix of the passed Dataframe
@@ -52,9 +58,11 @@ class dataInfo:
         '''
             Returns the duplicates of the passed Dataframe
         '''
+        if self.df[self.df.duplicated()].count == 0:
+            print(f"There are {self.df[self.df.duplicated()].count} duplicated values")
         return self.df[self.df.duplicated()]
 
-    def find_column_based_missing_percentage(self):
+    def find_column_missing_percentage(self):
         '''
             Returns the missing percentage of the passed Dataframe
         '''
